@@ -23,10 +23,6 @@ fun DetailScreen(navController: NavController = rememberNavController(),
 
     val movie = filterMovie(movieId = movieId)
 
-    var showMenu by remember{
-        mutableStateOf(false)
-    }
-
     Scaffold(
         topBar = {
             TopAppBar(elevation = 3.dp) {
@@ -56,7 +52,7 @@ fun MainContent(movie: Movie){
         .fillMaxWidth()
         .fillMaxHeight()) {
         Column {
-            MovieRow(movie = movie, onItemClick = {})
+            MovieRow(showDetails= true, movie = movie, onItemClick = {})
 
             Spacer(modifier = Modifier.height(8.dp))
 

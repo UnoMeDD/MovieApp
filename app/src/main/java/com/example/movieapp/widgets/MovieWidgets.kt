@@ -25,9 +25,9 @@ import com.example.movieapp.data.getMovies
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun MovieRow(movie: Movie, onItemClick: (String) -> Unit){
+fun MovieRow(showDetails: Boolean, movie: Movie, onItemClick: (String) -> Unit){
     var showDetails by remember{
-        mutableStateOf(false)
+        mutableStateOf(showDetails)
     }
     Card(
         modifier = Modifier
@@ -56,7 +56,7 @@ fun MovieRow(movie: Movie, onItemClick: (String) -> Unit){
                         }
                     ),
                     contentDescription = "Movie poster",
-                    modifier = Modifier.size(128.dp)
+                    modifier = Modifier.size(10.dp)
                     )
             }
             Column(
@@ -103,7 +103,6 @@ fun HorizontalScrollImageView(movie: Movie = getMovies()[0]) {
 fun MovieDetails(movie: Movie){
     Box(modifier = Modifier
         .fillMaxWidth()
-        .fillMaxHeight()
         .padding(4.dp)) {
         Column() {
             Text(text ="Plot: ${movie.plot}", style= MaterialTheme.typography.body2)

@@ -57,7 +57,7 @@ fun Homescreen(navController: NavController = rememberNavController()){
 fun MainContent(navController: NavController, movies: List<Movie> = getMovies()){
     LazyColumn {
         items(items = movies) { movie ->
-            MovieRow(movie = movie, onItemClick = { movieId ->
+            MovieRow(showDetails = false, movie = movie, onItemClick = { movieId ->
                 navController.navigate(route = MovieScreens.DetailScreen.name+"/$movieId")
             })
         }
