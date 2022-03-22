@@ -8,6 +8,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -28,7 +29,7 @@ fun DetailScreen(navController: NavController = rememberNavController(),
 
     Scaffold(
         topBar = {
-            TopAppBar(backgroundColor = Color.Cyan, elevation = 3.dp) {
+            TopAppBar(elevation = 3.dp) {
                 Row {
                     Icon(imageVector = Icons.Default.ArrowBack,
                         contentDescription = "Arrow back",
@@ -61,7 +62,9 @@ fun MainContent(movie: Movie){
 
             Divider()
 
-            Text(text = movie.title, style = MaterialTheme.typography.h5)
+            Text(text = "Movie Images",
+                style = MaterialTheme.typography.h5,
+                )
 
             HorizontalScrollImageView(movie = movie)
         }

@@ -16,6 +16,7 @@ import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import coil.transform.CircleCropTransformation
@@ -94,6 +95,22 @@ fun HorizontalScrollImageView(movie: Movie = getMovies()[0]) {
                 )
             }
 
+        }
+    }
+}
+
+@Composable
+fun MovieDetails(movie: Movie){
+    Box(modifier = Modifier
+        .fillMaxWidth()
+        .fillMaxHeight()
+        .padding(4.dp)) {
+        Column() {
+            Text(text ="Plot: ${movie.plot}", style= MaterialTheme.typography.body2)
+            Divider(color = Color.Gray, thickness = 1.dp, modifier = Modifier.padding(top =2.dp, bottom = 2.dp))
+            Text(text ="Genre: ${movie.genre}", style= MaterialTheme.typography.body2)
+            Text(text ="Actor: ${movie.actors}", style= MaterialTheme.typography.body2)
+            Text(text ="Rating: ${movie.rating}", style= MaterialTheme.typography.body2)
         }
     }
 }

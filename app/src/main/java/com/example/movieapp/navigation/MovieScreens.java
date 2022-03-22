@@ -2,5 +2,6 @@ package com.example.movieapp.navigation;
 
 public enum MovieScreens {
     Homescreen,
-    DetailScreen
+    DetailScreen,
+    FavoriteScreen
 }

@@ -31,7 +31,7 @@ fun Homescreen(navController: NavController = rememberNavController()){
                             Icon(imageVector = Icons.Default.MoreVert, contentDescription = "more")
                         }
                         DropdownMenu(expanded = showMenu, onDismissRequest = { showMenu = false }) {
-                            DropdownMenuItem(onClick = { /*TODO*/ }) {
+                            DropdownMenuItem(onClick = { navController.navigate(route = MovieScreens.FavoriteScreen.name)}) {
                                 Row(
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
