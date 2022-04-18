@@ -1,6 +1,5 @@
 package com.example.movieapp
 
-import android.widget.HorizontalScrollView
 import androidx.compose.animation.*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable

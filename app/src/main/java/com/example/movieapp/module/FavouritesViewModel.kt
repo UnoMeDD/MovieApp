@@ -1,10 +1,8 @@
 package com.example.movieapp.module
 
-import android.util.Log
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import com.example.movieapp.data.Movie
-import java.nio.file.Files.exists
 
 class FavouritesViewModel : ViewModel() {
 
