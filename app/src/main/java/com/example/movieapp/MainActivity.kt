@@ -56,10 +56,11 @@ fun MovieApp(content: @Composable () -> Unit){
     }
 }
 
-@Preview(showBackground = true)
+/*@Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     MovieAppTheme {
         Homescreen()
     }
 }
+*/

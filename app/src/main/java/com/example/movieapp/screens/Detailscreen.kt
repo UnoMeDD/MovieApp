@@ -15,11 +15,13 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.movieapp.data.Movie
 import com.example.movieapp.data.getMovies
+import com.example.movieapp.module.FavouritesViewModel
+import com.example.movieapp.widgets.AddToFavourites
 
 //@Preview(showBackground = true)
 @Composable
 fun DetailScreen(navController: NavController = rememberNavController(),
-                 movieId : String?) {
+                 movieId : String?, favViewModel: FavouritesViewModel) {
 
     val movie = filterMovie(movieId = movieId)
 
@@ -41,18 +43,22 @@ fun DetailScreen(navController: NavController = rememberNavController(),
             }
         }
     ) {
-        MainContent(movie = movie)
+        MainContent(movie = movie, favViewModel)
     }
 }
 
 @Composable
-fun MainContent(movie: Movie){
+fun MainContent(movie: Movie, favViewModel: FavouritesViewModel){
 
     Surface(modifier = Modifier
         .fillMaxWidth()
         .fillMaxHeight()) {
         Column {
-            MovieRow(showDetails= true, movie = movie, onItemClick = {})
+            MovieRow(showDetails= true, movie = movie, onItemClick = {}) {
+                AddToFavourites(movie = movie, isFavourite = favViewModel.movieExists(movie)) {
+                    favViewModel.addMovie(movie)
+                }
+            }
 
             Spacer(modifier = Modifier.height(8.dp))
 
